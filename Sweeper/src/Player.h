@@ -17,11 +17,12 @@ public:
 	void Draw(Texture _image);
 
 	void Move();
-
+	// 移動制限用の関数
 	void Move_limit();
 
 private:
-	// キャラクターのデータ
+	// キャラクターの情報をまとめたもの
+	// 位置情報やサイズなど
 	Character_data data;
 
 };
