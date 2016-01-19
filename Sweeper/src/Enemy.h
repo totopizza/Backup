@@ -15,11 +15,21 @@ public:
 
 	void Move();
 
+	void Set_position();
+
+	void Pulled(bool _is_pulled);
+
 private:
 	// キャラクターの情報をまとめたもの
 	// 位置情報やサイズなど
 	Character_data data;
 
+	Random random;
+
+	int speed;
+
 	bool is_active;
+
+	bool is_pulled;
 
 };

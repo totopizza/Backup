@@ -2,17 +2,19 @@
 
 void Game_manager::Setup()
 {
-	player.Setup();
-	enemy.Setup();
-
 	player_image = Texture("res/sweeper.png");
 	enemy_image = Texture("res/dust.png");
+
+	player.Setup();
+	enemy.Setup();
 }
 
 void Game_manager::Update()
 {
 	player.Update();
 	enemy.Update();
+
+	enemy.Pulled(player.Get_is_pulled());
 }
 
 void Game_manager::Draw()
