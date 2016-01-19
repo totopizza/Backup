@@ -13,8 +13,6 @@ void Enemy::Setup()
 	speed = 5;
 
 	is_active = true;
-
-	is_pulled = false;
 }
 
 void Enemy::Update()
@@ -50,10 +48,10 @@ void Enemy::Set_position()
 	data.position.y() = (WINDOW_HEIGHT / 2) + 20;
 }
 
-void Enemy::Pulled(bool _is_pulled)
+void Enemy::Pulled(bool _is_pull)
 {
-	if (_is_pulled){
-		speed = MOVE_POWER * 1.5;
+	if (_is_pull){
+		speed = MOVE_POWER * 5;
 	}
 	else{
 		speed = MOVE_POWER;

@@ -9,7 +9,7 @@ void Player::Setup()
 
 	move_limit_bottom = -WINDOW_HEIGHT / 2;
 
-	is_pulled = false;
+	is_pull = false;
 }
 
 void Player::Update()
@@ -19,10 +19,10 @@ void Player::Update()
 	Move_limit();
 
 	if (App::get().isPressKey(GLFW_KEY_A)){
-		is_pulled = true;
+		is_pull = true;
 	}
 	else{
-		is_pulled = false;
+		is_pull = false;
 	}
 }
 
@@ -59,9 +59,9 @@ void Player::Move_limit()
 	}
 }
 
-bool Player::Get_is_pulled()
+bool Player::Get_is_pull()
 {
-	if (is_pulled){
+	if (is_pull){
 		return true;
 	}
 
