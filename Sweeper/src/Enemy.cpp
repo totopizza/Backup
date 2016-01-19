@@ -18,8 +18,6 @@ void Enemy::Setup()
 void Enemy::Update()
 {
 	Move();
-
-	is_pulled = true;
 }
 
 void Enemy::Draw(Texture _image)
