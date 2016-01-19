@@ -10,7 +10,7 @@ void Enemy::Setup()
 	data.clip_position = Vec2f(0, 0);
 	data.clip_size = Vec2f(512, 512);
 
-	speed = 5;
+	speed = MOVE_POWER;
 
 	is_active = true;
 }
@@ -18,6 +18,8 @@ void Enemy::Setup()
 void Enemy::Update()
 {
 	Move();
+
+	is_pulled = true;
 }
 
 void Enemy::Draw(Texture _image)
@@ -34,10 +36,12 @@ void Enemy::Draw(Texture _image)
 void Enemy::Move()
 {
 	if (is_active){
+		Speed_control();
 		data.position.y() -= speed;
 	}
 
 	if (data.position.y() + data.size.y() < -WINDOW_HEIGHT / 2){
+		is_active = false;
 		Set_position();
 	}
 }
@@ -46,11 +50,13 @@ void Enemy::Set_position()
 {
 	data.position.x() = random(-WINDOW_WIDTH / 2, (WINDOW_WIDTH / 2) - 50);
 	data.position.y() = (WINDOW_HEIGHT / 2) + 20;
+
+	is_active = true;
 }
 
-void Enemy::Pulled(bool _is_pull)
+void Enemy::Speed_control()
 {
-	if (_is_pull){
+	if (is_pulled){
 		speed = MOVE_POWER * 5;
 	}
 	else{

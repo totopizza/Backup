@@ -17,7 +17,7 @@ public:
 
 	void Set_position();
 
-	void Pulled(bool _is_pull);
+	void Speed_control();
 
 private:
 	// キャラクターの情報をまとめたもの
@@ -29,5 +29,7 @@ private:
 	int speed;
 
 	bool is_active;
+
+	bool is_pulled;
 
 };

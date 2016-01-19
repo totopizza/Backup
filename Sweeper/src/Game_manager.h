@@ -4,6 +4,8 @@
 #include "Player.h"
 #include "Enemy.h"
 
+bool Width_decision(Character_data _player, Character_data _enemy);
+
 class Game_manager
 {
 public:

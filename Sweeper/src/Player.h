@@ -20,15 +20,11 @@ public:
 	// 移動制限用の関数
 	void Move_limit();
 
-	bool Get_is_pull();
-
 private:
 	// キャラクターの情報をまとめたもの
 	// 位置情報やサイズなど
 	Character_data data;
 
 	float move_limit_bottom;
-
-	bool is_pull;
 
 };
