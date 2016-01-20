@@ -13,6 +13,8 @@ void Enemy::Setup()
 	speed = MOVE_POWER;
 
 	is_active = true;
+
+	is_pulled = false;
 }
 
 void Enemy::Update()
