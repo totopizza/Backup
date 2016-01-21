@@ -19,6 +19,8 @@ public:
 
 	void Pulled(bool _is_pull);
 
+	Character_data Get_data();
+
 private:
 	// キャラクターの情報をまとめたもの
 	// 位置情報やサイズなど

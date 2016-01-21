@@ -4,7 +4,7 @@ void Enemy::Setup()
 {
 	random.setSeed(u_int(time(nullptr)));
 
-	data.position = Vec2f(random(-WINDOW_WIDTH / 2, (WINDOW_WIDTH / 2) - 50),	// xé≤
+	data.position = Vec2f(random(-WINDOW_WIDTH / 2, (WINDOW_WIDTH / 2) - 200),	// xé≤
 						  (WINDOW_HEIGHT / 2) + 20);							// yé≤
 	data.size = Vec2f(128, 128);
 	data.clip_position = Vec2f(0, 0);
@@ -46,7 +46,7 @@ void Enemy::Move()
 
 void Enemy::Set_position()
 {
-	data.position.x() = random(-WINDOW_WIDTH / 2, (WINDOW_WIDTH / 2) - 50);
+	data.position.x() = random(-WINDOW_WIDTH / 2, (WINDOW_WIDTH / 2) - 200);
 	data.position.y() = (WINDOW_HEIGHT / 2) + 20;
 
 	is_active = true;
@@ -57,8 +57,13 @@ void Enemy::Pulled(bool _is_pull)
 	if (_is_pull){
 		speed = MOVE_POWER * 5;
 	}
-	else if (!_is_pull){
+	else{
 		speed = MOVE_POWER;
 	}
+}
+
+Character_data Enemy::Get_data()
+{
+	return data;
 }
 
