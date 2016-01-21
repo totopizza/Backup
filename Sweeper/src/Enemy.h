@@ -19,6 +19,10 @@ public:
 
 	void Pulled(bool _is_pull);
 
+	void Death();
+
+	void Death_decision(Character_data _player, bool _is_press_key);
+
 	Character_data Get_data();
 
 private:

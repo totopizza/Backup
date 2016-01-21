@@ -9,6 +9,8 @@ void Player::Setup()
 
 	move_limit_bottom = -WINDOW_HEIGHT / 2;
 
+	is_press_key = false;
+
 }
 
 void Player::Update()
@@ -49,6 +51,30 @@ void Player::Move_limit()
 	if (data.position.y() < move_limit_bottom){
 		data.position.y() = move_limit_bottom;
 	}
+}
+
+void Player::Press_key()
+{
+	if (App::get().isPressKey(GLFW_KEY_A)){
+		is_press_key = true;
+	}
+	else{
+		is_press_key = false;
+	}
+}
+
+void Player::Pull_key()
+{
+	is_press_key = false;
+}
+
+bool Player::Get_is_press_key()
+{
+	if (is_press_key){
+		return true;
+	}
+
+	return false;
 }
 
 Character_data Player::Get_data()

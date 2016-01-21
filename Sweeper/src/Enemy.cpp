@@ -39,7 +39,7 @@ void Enemy::Move()
 	}
 
 	if (data.position.y() + data.size.y() < -WINDOW_HEIGHT / 2){
-		is_active = false;
+		Death();
 		Set_position();
 	}
 }
@@ -59,6 +59,21 @@ void Enemy::Pulled(bool _is_pull)
 	}
 	else{
 		speed = MOVE_POWER;
+	}
+}
+
+void Enemy::Death()
+{
+	is_active = false;
+}
+
+void Enemy::Death_decision(Character_data _player, bool _is_press_key)
+{
+	if (_player.position.y() + _player.size.y() >= data.position.y()){
+		if (_is_press_key){
+			Death();
+			Set_position();
+		}
 	}
 }
 

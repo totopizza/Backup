@@ -1,11 +1,19 @@
 #include "Game_manager.h"
 
+bool Width_decision(Character_data _player, Character_data _enemy)
+{
+	if (_player.position.x() < _enemy.position.x() &&
+		_player.position.x() + _player.size.x() > _enemy.position.x() + _enemy.size.x()){
+		return true;
+	}
+
+	return false;
+}
+
 void Game_manager::Setup()
 {
 	player_image = Texture("res/sweeper.png");
 	enemy_image = Texture("res/dust.png");
-
-	is_pull = false;
 
 	player.Setup();
 	enemy.Setup();
@@ -16,20 +24,16 @@ void Game_manager::Update()
 	player.Update();
 	enemy.Update();
 
-	if (player.Get_data().position.x() < enemy.Get_data().position.x() &&
-		player.Get_data().position.x() + player.Get_data().size.x() > enemy.Get_data().position.x() + enemy.Get_data().size.x()){
-		if (App::get().isPressKey(GLFW_KEY_A)){
-			is_pull = true;
-		}
-		else{
-			is_pull = false;
-		}
+	if (Width_decision(player.Get_data(),enemy.Get_data())){
+		player.Press_key();
 	}
 	else{
-		is_pull = false;
+		player.Pull_key();
 	}
 
-	enemy.Pulled(is_pull);
+	enemy.Pulled(player.Get_is_press_key());
+
+	enemy.Death_decision(player.Get_data(), player.Get_is_press_key());
 }
 
 void Game_manager::Draw()

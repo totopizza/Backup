@@ -24,6 +24,4 @@ private:
 	Texture player_image;
 	Texture enemy_image;
 
-	bool is_pull;
-
 };

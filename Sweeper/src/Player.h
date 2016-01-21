@@ -20,6 +20,12 @@ public:
 	// ˆÚ“®§ŒÀ—p‚ÌŠÖ”
 	void Move_limit();
 
+	void Press_key();
+
+	void Pull_key();
+
+	bool Get_is_press_key();
+
 	Character_data Get_data();
 
 private:
@@ -28,4 +34,6 @@ private:
 	Character_data data;
 
 	float move_limit_bottom;
+
+	bool is_press_key;
 };
