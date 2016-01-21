@@ -8,6 +8,8 @@ void Player::Setup()
 	data.clip_size = Vec2f(128, 256);
 
 	move_limit_bottom = -WINDOW_HEIGHT / 2;
+
+	is_pull = false;
 }
 
 void Player::Update()
@@ -15,6 +17,8 @@ void Player::Update()
 	Move();
 
 	Move_limit();
+
+	Press_key();
 }
 
 void Player::Draw(Texture _image)
@@ -48,4 +52,24 @@ void Player::Move_limit()
 	if (data.position.y() < move_limit_bottom){
 		data.position.y() = move_limit_bottom;
 	}
+}
+
+void Player::Press_key()
+{
+	if (App::get().isPressKey(GLFW_KEY_A)){
+		is_pull = true;
+	}
+	else
+	{
+		is_pull = false;
+	}
+}
+
+bool Player::Get_is_pull()
+{
+	if (is_pull){
+		return true;
+	}
+
+	return false;
 }

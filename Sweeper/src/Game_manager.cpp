@@ -13,6 +13,8 @@ void Game_manager::Update()
 {
 	player.Update();
 	enemy.Update();
+
+	enemy.Pulled(player.Get_is_pull());
 }
 
 void Game_manager::Draw()

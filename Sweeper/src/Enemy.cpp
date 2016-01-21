@@ -14,7 +14,6 @@ void Enemy::Setup()
 
 	is_active = true;
 
-	is_pulled = false;
 }
 
 void Enemy::Update()
@@ -36,7 +35,6 @@ void Enemy::Draw(Texture _image)
 void Enemy::Move()
 {
 	if (is_active){
-		Speed_control();
 		data.position.y() -= speed;
 	}
 
@@ -54,12 +52,13 @@ void Enemy::Set_position()
 	is_active = true;
 }
 
-void Enemy::Speed_control()
+void Enemy::Pulled(bool _is_pull)
 {
-	if (is_pulled){
+	if (_is_pull){
 		speed = MOVE_POWER * 5;
 	}
-	else{
+	else if (!_is_pull){
 		speed = MOVE_POWER;
 	}
 }
+
