@@ -12,6 +12,8 @@ void Enemy::Setup()
 
 	speed = MOVE_POWER;
 
+	point = 0;
+
 	is_active = true;
 
 }
@@ -30,6 +32,9 @@ void Enemy::Draw(Texture _image)
 					   data.clip_size.x(), data.clip_size.y(),
 					   _image);
 	}
+
+	font.size(100);
+	font.draw(std::to_string(point), Vec2f(WINDOW_WIDTH / 2 - 100, WINDOW_HEIGHT / 2 - 100), Color::red);
 }
 
 void Enemy::Move()
@@ -41,6 +46,8 @@ void Enemy::Move()
 	if (data.position.y() + data.size.y() < -WINDOW_HEIGHT / 2){
 		Death();
 		Set_position();
+
+		point += 1;
 	}
 }
 
@@ -75,6 +82,11 @@ void Enemy::Death_decision(Character_data _player, bool _is_press_key)
 			Set_position();
 		}
 	}
+}
+
+int Enemy::Get_point()
+{
+	return point;
 }
 
 Character_data Enemy::Get_data()

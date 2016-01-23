@@ -2,7 +2,7 @@
 
 void Player::Setup()
 {
-	data.position = Vec2f(0, move_limit_bottom);
+	data.position = Vec2f(0, -WINDOW_HEIGHT / 2);
 	data.size = Vec2f(256, 400);
 	data.clip_position = Vec2f(0, 0);
 	data.clip_size = Vec2f(128, 256);
@@ -15,6 +15,8 @@ void Player::Setup()
 
 void Player::Update()
 {
+	data.position.y() = Get_move_limit();
+
 	Move();
 
 	Move_limit();
@@ -47,10 +49,6 @@ void Player::Move_limit()
 	else if (data.position.x() + data.size.x() > WINDOW_WIDTH / 2){
 		data.position.x() = (WINDOW_WIDTH / 2) - data.size.x();
 	}
-
-	if (data.position.y() < move_limit_bottom){
-		data.position.y() = move_limit_bottom;
-	}
 }
 
 void Player::Press_key()
@@ -66,6 +64,16 @@ void Player::Press_key()
 void Player::Pull_key()
 {
 	is_press_key = false;
+}
+
+float Player::Get_move_limit()
+{
+	return move_limit_bottom;
+}
+
+void Player::Add_move_limit()
+{
+	move_limit_bottom += 100;
 }
 
 bool Player::Get_is_press_key()

@@ -3,6 +3,8 @@
 
 #include "Utility.h"
 
+#include <string>
+
 class Enemy
 {
 public:
@@ -23,6 +25,8 @@ public:
 
 	void Death_decision(Character_data _player, bool _is_press_key);
 
+	int Get_point();
+
 	Character_data Get_data();
 
 private:
@@ -32,7 +36,11 @@ private:
 
 	Random random;
 
+	Font font = Font("res/font.ttf");
+
 	int speed;
+
+	int point;
 
 	bool is_active;
 

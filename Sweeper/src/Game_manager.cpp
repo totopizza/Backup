@@ -15,6 +15,8 @@ void Game_manager::Setup()
 	player_image = Texture("res/sweeper.png");
 	enemy_image = Texture("res/dust.png");
 
+	is_up = false;
+
 	player.Setup();
 	enemy.Setup();
 }
@@ -29,6 +31,14 @@ void Game_manager::Update()
 	}
 	else{
 		player.Pull_key();
+	}
+
+	if (enemy.Get_point() == 0 || enemy.Get_point() % 3 != 0){
+		is_up = false;
+	}
+	else if (enemy.Get_point() % 3 == 0 && !is_up){
+		is_up = true;
+		player.Add_move_limit();
 	}
 
 	enemy.Pulled(player.Get_is_press_key());

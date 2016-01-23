@@ -24,6 +24,10 @@ public:
 
 	void Pull_key();
 
+	void Add_move_limit();
+
+	float Get_move_limit();
+
 	bool Get_is_press_key();
 
 	Character_data Get_data();
