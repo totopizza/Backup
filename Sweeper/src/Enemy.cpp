@@ -4,8 +4,8 @@ void Enemy::Setup()
 {
 	random.setSeed(u_int(time(nullptr)));
 
-	data.position = Vec2f(random(-WINDOW_WIDTH / 2, (WINDOW_WIDTH / 2) - 200),	// xé≤
-						  (WINDOW_HEIGHT / 2) + 20);							// yé≤
+	data.position = Vec2f(random(-WINDOW_WIDTH / 2, (WINDOW_WIDTH / 2) - 200),	// x
+				     (WINDOW_HEIGHT / 2) + 20);				// y
 	data.size = Vec2f(128, 128);
 	data.clip_position = Vec2f(0, 0);
 	data.clip_size = Vec2f(512, 512);
