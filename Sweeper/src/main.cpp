@@ -1,5 +1,5 @@
 ﻿//
-// シューティング（仮）
+// Sweeper
 //
 
 #include "App_setup.h"
@@ -17,6 +17,7 @@ int main() {
 
 	game.Update();
 	game.Draw();
+
 
 	App::get().end();
   }

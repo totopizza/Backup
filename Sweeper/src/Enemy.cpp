@@ -59,9 +59,9 @@ void Enemy::Set_position()
 	is_active = true;
 }
 
-void Enemy::Pulled(bool _is_pull)
+void Enemy::Pulled(bool _is_press_key)
 {
-	if (_is_pull){
+	if (_is_press_key){
 		speed = MOVE_POWER * 5;
 	}
 	else{

@@ -19,7 +19,7 @@ public:
 
 	void Set_position();
 
-	void Pulled(bool _is_pull);
+	void Pulled(bool _is_press_key);
 
 	void Death();
 

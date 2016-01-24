@@ -15,7 +15,7 @@ void Game_manager::Setup()
 	player_image = Texture("res/sweeper.png");
 	enemy_image = Texture("res/dust.png");
 
-	is_up = false;
+	is_up;
 
 	player.Setup();
 	enemy.Setup();
@@ -26,7 +26,7 @@ void Game_manager::Update()
 	player.Update();
 	enemy.Update();
 
-	if (Width_decision(player.Get_data(),enemy.Get_data())){
+	if (Width_decision(player.Get_data(), enemy.Get_data())){
 		player.Press_key();
 	}
 	else{
