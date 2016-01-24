@@ -71,9 +71,11 @@ float Player::Get_move_limit()
 	return move_limit_bottom;
 }
 
-void Player::Add_move_limit()
+int Player::Add_move_limit()
 {
 	move_limit_bottom += 100;
+
+	return move_limit_bottom;
 }
 
 bool Player::Get_is_press_key()

@@ -26,6 +26,7 @@ void Game_manager::Update()
 	player.Update();
 	enemy.Update();
 
+	// 掃除機の横幅の範囲内かの判定
 	if (Width_decision(player.Get_data(), enemy.Get_data())){
 		player.Press_key();
 	}
@@ -33,6 +34,10 @@ void Game_manager::Update()
 		player.Pull_key();
 	}
 
+	// 地面がせりあがる処理
+	// TODO:Playerの方で関数化
+	// void型 引数1個 int型(Get_point()の部分)
+	// 新たにbool型 is_upをつくること
 	if (enemy.Get_point() == 0 || enemy.Get_point() % 3 != 0){
 		is_up = false;
 	}
@@ -41,6 +46,9 @@ void Game_manager::Update()
 		player.Add_move_limit();
 	}
 
+
+	// 画面外に出た時や地面に落ちた時の処理
+	// TODO:Enemyの方で関数化
 	if (enemy.Get_data().position.y() + enemy.Get_data().size.y() < player.Get_move_limit()){
 		enemy.Death();
 		enemy.Set_position();
