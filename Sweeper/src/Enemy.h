@@ -25,6 +25,8 @@ public:
 
 	void Death_decision(Character_data _player, bool _is_press_key);
 
+	void Add_point();
+
 	int Get_point();
 
 	Character_data Get_data();

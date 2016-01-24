@@ -41,6 +41,12 @@ void Game_manager::Update()
 		player.Add_move_limit();
 	}
 
+	if (enemy.Get_data().position.y() + enemy.Get_data().size.y() < player.Get_move_limit()){
+		enemy.Death();
+		enemy.Set_position();
+		enemy.Add_point();
+	}
+
 	enemy.Pulled(player.Get_is_press_key());
 
 	enemy.Death_decision(player.Get_data(), player.Get_is_press_key());

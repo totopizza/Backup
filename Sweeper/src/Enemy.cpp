@@ -42,13 +42,6 @@ void Enemy::Move()
 	if (is_active){
 		data.position.y() -= speed;
 	}
-
-	if (data.position.y() + data.size.y() < -WINDOW_HEIGHT / 2){
-		Death();
-		Set_position();
-
-		point += 1;
-	}
 }
 
 void Enemy::Set_position()
@@ -82,6 +75,11 @@ void Enemy::Death_decision(Character_data _player, bool _is_press_key)
 			Set_position();
 		}
 	}
+}
+
+void Enemy::Add_point()
+{
+	point += 1;
 }
 
 int Enemy::Get_point()
