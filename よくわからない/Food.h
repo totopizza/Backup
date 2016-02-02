@@ -20,6 +20,8 @@ public:
 
 	void Update();
 
+	void Crick();
+
 	void Create(Vec2f _pos);
 
 	void Draw(Texture _image);

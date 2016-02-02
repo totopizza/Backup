@@ -24,10 +24,26 @@ void Food::Update()
 	createTimer -= 1;
 	if (createTimer == 0){
 		Vec2f pos(random(-300, 300),
-				  random(-300, 300));
+			random(-300, 300));
 		Create(pos);
 
 		createTimer = 30;
+	}
+
+	Crick();
+}
+
+void Food::Crick()
+{
+	if (App::Get().isPushButton(Mouse::LEFT)){
+		Vec2f mouse_pos = App::Get().mousePosition();
+
+		for (std::list<DrawData>::iterator itr = datas.begin(); itr != datas.end(); ++itr){
+			if (MouseToRectCollision(mouse_pos, itr->pos, itr->size)){
+				itr = datas.erase(itr);
+				break;
+			}
+		}
 	}
 }
 
@@ -48,11 +64,14 @@ void Food::Create(Vec2f _pos)
 
 void Food::Draw(Texture _image)
 {
-	for (std::list<DrawData>::iterator itr = datas.begin(); itr != datas.end(); itr++){
-		drawTextureBox(itr->pos.x(), itr->pos.y(),
-			itr->size.x(), itr->size.y(),
-			itr->clipPos.x(), itr->clipPos.y(),
-			itr->clipSize.x(), itr->clipSize.y(),
-			_image);
+	if (isActive){
+		for (std::list<DrawData>::iterator itr = datas.begin(); itr != datas.end(); itr++){
+			drawTextureBox(itr->pos.x(), itr->pos.y(),
+				itr->size.x(), itr->size.y(),
+				itr->clipPos.x(), itr->clipPos.y(),
+				itr->clipSize.x(), itr->clipSize.y(),
+				_image);
+		}
 	}
+	
 }
