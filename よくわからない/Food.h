@@ -3,6 +3,8 @@
 
 #include "Utility.h"
 
+#include <list>
+
 class Food
 {
 public:
@@ -18,12 +20,16 @@ public:
 
 	void Update();
 
+	void Create(Vec2f _pos);
+
 	void Draw(Texture _image);
 
 private:
-	DrawData data;
+	std::list<DrawData> datas;
 
 	Random random;
+
+	int createTimer;
 
 	bool isActive;
 };

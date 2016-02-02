@@ -5,15 +5,13 @@ void Food::Setup()
 	random.setSeed(u_int(time(nullptr)));
 	DataInit();
 	BoolInit();
+
+	createTimer = 30;
 }
 
 void Food::DataInit()
 {
-	data.pos = Vec2f(random(-300, 300),
-					 random(-300, 300));
-	data.size = Vec2f(100.0f, 100.0f);
-	data.clipPos = Vec2f(0, 0);
-	data.clipSize = Vec2f(256.0f, 256.0f);
+	
 }
 
 void Food::BoolInit()
@@ -23,16 +21,38 @@ void Food::BoolInit()
 
 void Food::Update()
 {
+	createTimer -= 1;
+	if (createTimer == 0){
+		Vec2f pos(random(-300, 300),
+				  random(-300, 300));
+		Create(pos);
 
+		createTimer = 30;
+	}
+}
+
+void Food::Create(Vec2f _pos)
+{
+	if (datas.size() == FoodMax) return;
+
+	DrawData data = 
+	{
+		_pos,
+		Vec2f(100, 100),
+		Vec2f(0, 0),
+		Vec2f(256, 256)
+	};
+
+	datas.push_back(data);
 }
 
 void Food::Draw(Texture _image)
 {
-	if (isActive){
-		drawTextureBox(data.pos.x(), data.pos.y(),
-			data.size.x(), data.size.y(),
-			data.clipPos.x(), data.clipPos.y(),
-			data.clipSize.x(), data.clipSize.y(),
+	for (std::list<DrawData>::iterator itr = datas.begin(); itr != datas.end(); itr++){
+		drawTextureBox(itr->pos.x(), itr->pos.y(),
+			itr->size.x(), itr->size.y(),
+			itr->clipPos.x(), itr->clipPos.y(),
+			itr->clipSize.x(), itr->clipSize.y(),
 			_image);
 	}
 }
