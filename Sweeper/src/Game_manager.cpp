@@ -34,6 +34,9 @@ void Game_manager::Update()
 		player.Pull_key();
 	}
 
+	if (Width_decision(player.Get_data(),enemy.Get_data()) &&
+		)
+
 	// ’n–Ê‚ª‚¹‚è‚ ‚ª‚éˆ—
 	// TODO:Player‚Ì•û‚ÅŠÖ”‰»
 	// voidŒ^ ˆø”1ŒÂ intŒ^(Get_point()‚Ì•”•ª)
@@ -55,8 +58,9 @@ void Game_manager::Update()
 		enemy.Add_point();
 	}
 
+	// ‘|œ‹@‚Éˆø‚Á’£‚ç‚ê‚Ä‚¢‚é‚Ìˆ—
 	enemy.Pulled(player.Get_is_press_key());
-
+	// ‘|œ‹@‚É‹z‚¢‚Ü‚ê‚½‚Ìˆ—
 	enemy.Death_decision(player.Get_data(), player.Get_is_press_key());
 }
 

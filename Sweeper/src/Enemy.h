@@ -29,6 +29,8 @@ public:
 	// エネミーのポイントを渡す関数
 	int Get_point();
 
+	bool Get_is_death();
+
 	Character_data Get_data();
 
 private:
@@ -45,5 +47,7 @@ private:
 	int point;
 
 	bool is_active;
+
+	bool is_death;
 
 };

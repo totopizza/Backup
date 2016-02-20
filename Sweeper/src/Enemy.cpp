@@ -4,8 +4,8 @@ void Enemy::Setup()
 {
 	random.setSeed(u_int(time(nullptr)));
 
-	data.position = Vec2f(random(-WINDOW_WIDTH / 2, (WINDOW_WIDTH / 2) - 200),	// x
-						  (WINDOW_HEIGHT / 2) + 20);							// y
+	data.position = Vec2f(random(-WINDOW_WIDTH / 2, (WINDOW_WIDTH / 2) - 200),	// x²
+						  (WINDOW_HEIGHT / 2) + 20);							// y²
 	data.size = Vec2f(128, 128);
 	data.clip_position = Vec2f(0, 0);
 	data.clip_size = Vec2f(512, 512);
@@ -15,6 +15,8 @@ void Enemy::Setup()
 	point = 0;
 
 	is_active = true;
+
+	is_death = false;
 
 }
 
@@ -50,6 +52,8 @@ void Enemy::Set_position()
 	data.position.y() = (WINDOW_HEIGHT / 2) + 20;
 
 	is_active = true;
+
+	is_death = false;
 }
 
 void Enemy::Pulled(bool _is_press_key)
@@ -71,6 +75,7 @@ void Enemy::Death_decision(Character_data _player, bool _is_press_key)
 {
 	if (_player.position.y() + _player.size.y() >= data.position.y()){
 		if (_is_press_key){
+			is_death = true;
 			Death();
 			Set_position();
 		}
@@ -85,6 +90,15 @@ void Enemy::Add_point()
 int Enemy::Get_point()
 {
 	return point;
+}
+
+bool Enemy::Get_is_death()
+{
+	if (is_death){
+		return true;
+	}
+
+	return false;
 }
 
 Character_data Enemy::Get_data()

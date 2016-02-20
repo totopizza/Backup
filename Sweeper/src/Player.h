@@ -2,6 +2,7 @@
 #include "Character.h"
 
 #include "Utility.h"
+#include <string>
 
 class Player : public Character
 {
@@ -33,6 +34,8 @@ public:
 	Character_data Get_data();
 
 private:
+	Font font = Font("res/font.ttf");
+
 	// キャラクターの情報をまとめたもの
 	// 位置情報やサイズなど
 	Character_data data;

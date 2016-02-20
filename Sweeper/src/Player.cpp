@@ -7,6 +7,8 @@ void Player::Setup()
 	data.clip_position = Vec2f(0, 0);
 	data.clip_size = Vec2f(128, 256);
 
+	point = 0;
+
 	move_limit_bottom = -WINDOW_HEIGHT / 2;
 
 	is_press_key = false;
@@ -20,6 +22,7 @@ void Player::Update()
 	Move();
 
 	Move_limit();
+
 }
 
 void Player::Draw(Texture _image)
@@ -29,6 +32,9 @@ void Player::Draw(Texture _image)
 				   data.clip_position.x(), data.clip_position.y(),
 				   data.clip_size.x(), data.clip_size.y(),
 				   _image);
+
+	font.size(100);
+	font.draw(std::to_string(point), Vec2f(-WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2 - 100), Color::white);
 }
 
 void Player::Move()

@@ -20,7 +20,7 @@ private:
 	Player player;
 	Enemy enemy;
 
-	// TODO : ä»–ã®æ–¹æ³•ã‚‚è€ƒãˆã‚‹
+	// TODO : ‘¼‚Ì•û–@‚àl‚¦‚é
 	Texture player_image;
 	Texture enemy_image;
 
