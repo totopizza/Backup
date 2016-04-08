@@ -15,14 +15,13 @@ enum Window
 int main(void) {
 	AppEnv env(Window::WIDTH, Window::HEIGHT);
 
-	// マップチップ用二次元配列の中に入れるようの
-	// 配列
+	// マップチップ用二次元配列の中に入れる用の配列
 	int groundStatus[25];
 	for (int i = 0; i < 25; ++i) {
 		groundStatus[i] = 0;
 	}
 
-	// マップチップ用二次元配列
+	// 地面マップチップ用二次元配列
 	int* ground[5][5] = {
 		{ &groundStatus[0], &groundStatus[1], &groundStatus[2], &groundStatus[3], &groundStatus[4] },
 		{ &groundStatus[5], &groundStatus[6], &groundStatus[7], &groundStatus[8], &groundStatus[9] },
@@ -31,6 +30,8 @@ int main(void) {
 		{ &groundStatus[20], &groundStatus[21], &groundStatus[22], &groundStatus[23], &groundStatus[24] }
 	};
 
+	// 地面のマップチップに重ねる用二次元配列
+	// 種や障害物を置く時などに使用
 	// 今は関係ない
 	int ground2[5][5] = {
 		{ 0, 0, 0, 0, 0 },
@@ -40,12 +41,15 @@ int main(void) {
 		{ 0, 0, 0, 0, 0 }
 	};
 
-	int markerX = 0;
-	int markerY = 0;
+	// 選択マーカー用位置指定変数
+	// 後で消す
+	int markerX = 0;	// x
+	int markerY = 0;	// y
 
 	while (env.isOpen()) {
 		env.begin();
 
+		// 選択マーカー移動処理＆移動制限
 		if (markerX < MARKER_X_MAX && env.isPushKey(GLFW_KEY_RIGHT)) {
 			markerX += 1;
 		}
@@ -58,6 +62,7 @@ int main(void) {
 		else if (markerY < MARKER_Y_MAX && env.isPushKey(GLFW_KEY_DOWN)){
 			markerY += 1;
 		}
+
 
 		// マップチップ描画
 		for (int y = 0; y < 5; ++y) {
