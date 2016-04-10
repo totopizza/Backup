@@ -7,6 +7,9 @@
     <Filter Include="Lib">
       <UniqueIdentifier>{983490c7-8486-4c78-9811-71ef005a4f66}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Class">
+      <UniqueIdentifier>{1fa0a437-75b2-44f0-8451-29b1a93667d4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\lib\appEnv.hpp">
@@ -81,6 +84,7 @@
     <ClInclude Include="src\lib\wav.hpp">
       <Filter>Headers</Filter>
     </ClInclude>
+    <ClInclude Include="src\Map.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\lib\appEnv.cpp">
@@ -144,5 +148,6 @@
       <Filter>Lib</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Map.cpp" />
   </ItemGroup>
 </Project>
