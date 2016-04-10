@@ -85,6 +85,7 @@
       <Filter>Headers</Filter>
     </ClInclude>
     <ClInclude Include="src\Map.h" />
+    <ClInclude Include="src\Marker.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\lib\appEnv.cpp">
@@ -149,5 +150,6 @@
     </ClCompile>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Map.cpp" />
+    <ClCompile Include="src\Marker.cpp" />
   </ItemGroup>
 </Project>
