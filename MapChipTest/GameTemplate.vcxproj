@@ -44,6 +44,7 @@
     <ClInclude Include="src\lib\vector.hpp" />
     <ClInclude Include="src\lib\wav.hpp" />
     <ClInclude Include="src\Map.h" />
+    <ClInclude Include="src\MapManager.h" />
     <ClInclude Include="src\Marker.h" />
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +70,7 @@
     <ClCompile Include="src\lib\wav.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Map.cpp" />
+    <ClCompile Include="src\MapManager.cpp" />
     <ClCompile Include="src\Marker.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -16,4 +16,6 @@ public:
 
 	void Draw();
 
+	Vec2i GetMovingValue();
+
 };

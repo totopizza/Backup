@@ -30,3 +30,8 @@ void Marker::Draw()
 {
 	drawBox(position.x(), -position.y(), 100, 100, 3, Color::red);
 }
+
+Vec2i Marker::GetMovingValue()
+{
+	return movingValue;
+}
