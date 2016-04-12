@@ -12,13 +12,13 @@ void Map::Update(AppEnv& env)
 {
 	ground_2[2][2] = 2;
 
-	if (ground[marker.GetMovingValue().x()][marker.GetMovingValue().y()] == 0 &&
+	if (ground[marker.GetMovingValueInFront().x()][marker.GetMovingValueInFront().y()] == 0 &&
 		env.isPushKey(GLFW_KEY_A)){
-		ground[marker.GetMovingValue().x()][marker.GetMovingValue().y()] = 1;
+		ground[marker.GetMovingValueInFront().x()][marker.GetMovingValueInFront().y()] = 1;
 	}
-	else if (ground[marker.GetMovingValue().x()][marker.GetMovingValue().y()] == 1 &&
+	else if (ground[marker.GetMovingValueInFront().x()][marker.GetMovingValueInFront().y()] == 1 &&
 		env.isPushKey(GLFW_KEY_A)){
-		ground[marker.GetMovingValue().x()][marker.GetMovingValue().y()] = 0;
+		ground[marker.GetMovingValueInFront().x()][marker.GetMovingValueInFront().y()] = 0;
 	}
 
 	marker.Update(env);
