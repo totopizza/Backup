@@ -1,18 +1,20 @@
 ﻿#include "lib/framework.hpp"
 #include "Utility.h"
-#include "MapManager.h"
+#include "SceneManager.h"
 
 int main(void) {
 	AppEnv env(Window::width, Window::height);
 
-	MapManager mapManager;
+	SceneManager sceneManager;
 
 	while (env.isOpen()) {
 		env.begin();
 
-		mapManager.Update(env);
-		mapManager.Draw();
+		sceneManager.Update(env);
+		sceneManager.Draw();
 
 		env.end();
 	}
+
+	delete sceneManager.GetScene();
 }

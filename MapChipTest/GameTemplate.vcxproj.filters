@@ -13,6 +13,9 @@
     <Filter Include="Class\Map">
       <UniqueIdentifier>{d83154e9-252d-4d72-8172-7576b5fe6ceb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Class\Scene">
+      <UniqueIdentifier>{6a6f1e7f-e2c0-42d1-896a-613c9053de76}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\lib\appEnv.hpp">
@@ -98,6 +101,18 @@
     </ClInclude>
     <ClInclude Include="src\Utility.h" />
     <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\GameMain.h">
+      <Filter>Class\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Title.h">
+      <Filter>Class\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneBase.h">
+      <Filter>Class\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SceneManager.h">
+      <Filter>Class\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\lib\appEnv.cpp">
@@ -172,5 +187,14 @@
     </ClCompile>
     <ClCompile Include="src\Utility.cpp" />
     <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\GameMain.cpp">
+      <Filter>Class\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Title.cpp">
+      <Filter>Class\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SceneManager.cpp">
+      <Filter>Class\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

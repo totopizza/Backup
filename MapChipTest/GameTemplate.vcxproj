@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\GameMain.h" />
     <ClInclude Include="src\lib\appEnv.hpp" />
     <ClInclude Include="src\lib\audio.hpp" />
     <ClInclude Include="src\lib\camera2D.hpp" />
@@ -47,9 +48,13 @@
     <ClInclude Include="src\MapManager.h" />
     <ClInclude Include="src\Marker.h" />
     <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\SceneBase.h" />
+    <ClInclude Include="src\SceneManager.h" />
+    <ClInclude Include="src\Title.h" />
     <ClInclude Include="src\Utility.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\GameMain.cpp" />
     <ClCompile Include="src\lib\appEnv.cpp" />
     <ClCompile Include="src\lib\audio.cpp" />
     <ClCompile Include="src\lib\camera2D.cpp" />
@@ -75,6 +80,8 @@
     <ClCompile Include="src\MapManager.cpp" />
     <ClCompile Include="src\Marker.cpp" />
     <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\SceneManager.cpp" />
+    <ClCompile Include="src\Title.cpp" />
     <ClCompile Include="src\Utility.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -1,6 +1,13 @@
 #pragma once
 #include "lib\framework.hpp"
 
+static enum SceneType
+{
+	None_,
+	Title_,
+	GameMain_
+}sceneType;
+
 enum Direction
 {
 	Up_,

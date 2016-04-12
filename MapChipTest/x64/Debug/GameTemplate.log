@@ -1,11 +1,18 @@
-﻿2016/04/12 18:46:57 にビルドを開始しました。
+﻿2016/04/12 23:15:43 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "C:\Users\vantan\Documents\GitHub\Backup\MapChipTest\GameTemplate.vcxproj" (Build ターゲット)。
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppBuild.targets(388,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (GameTemplate.vcxproj).  This can lead to incorrect clean and rebuild behavior.
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /MP /Od /D WIN32 /D _DEBUG /D _WINDOWS /D DEBUG /D _ITERATOR_DEBUG_LEVEL=0 /D "PRODUCT_NAME=牧場物語" /GF /Gm- /EHsc /RTC1 /MDd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt src\Marker.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /MP /Od /D WIN32 /D _DEBUG /D _WINDOWS /D DEBUG /D _ITERATOR_DEBUG_LEVEL=0 /D "PRODUCT_NAME=牧場物語" /GF /Gm- /EHsc /RTC1 /MDd /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt src\GameMain.cpp src\Map.cpp src\MapManager.cpp src\Marker.cpp src\SceneManager.cpp src\Utility.cpp src\main.cpp
+         GameMain.cpp
+         Map.cpp
+         MapManager.cpp
          Marker.cpp
+         SceneManager.cpp
+         Utility.cpp
+         main.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\vantan\Documents\GitHub\Backup\MapChipTest\牧場物語.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\vantan\Documents\GitHub\Backup\MapChipTest\牧場物語.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\vantan\Documents\GitHub\Backup\MapChipTest\牧場物語.lib" /MACHINE:X64 x64\Debug\appEnv.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\vantan\Documents\GitHub\Backup\MapChipTest\牧場物語.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\vantan\Documents\GitHub\Backup\MapChipTest\牧場物語.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"mainCRTStartup" /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\vantan\Documents\GitHub\Backup\MapChipTest\牧場物語.lib" /MACHINE:X64 x64\Debug\GameMain.obj
+         x64\Debug\appEnv.obj
          x64\Debug\audio.obj
          x64\Debug\camera2D.obj
          x64\Debug\fileUtil.obj
@@ -30,10 +37,12 @@
          x64\Debug\MapManager.obj
          x64\Debug\Marker.obj
          x64\Debug\Player.obj
+         x64\Debug\SceneManager.obj
+         x64\Debug\Title.obj
          x64\Debug\Utility.obj
          GameTemplate.vcxproj -> C:\Users\vantan\Documents\GitHub\Backup\MapChipTest\牧場物語.exe
      1>プロジェクト "C:\Users\vantan\Documents\GitHub\Backup\MapChipTest\GameTemplate.vcxproj" (Build ターゲット) のビルドが完了しました。
 
 ビルドに成功しました。
 
-経過時間 00:00:01.65
+経過時間 00:00:11.20
