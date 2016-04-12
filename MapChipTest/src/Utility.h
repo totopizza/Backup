@@ -1,11 +1,18 @@
 #pragma once
 #include "lib\framework.hpp"
 
-static const int row = 5;
-static const int column = 5;
+enum Direction
+{
+	Up_,
+	Down_,
+	Right_,
+	Left_
+};
 
 struct ChipData
 {
+	static int row;
+	static int column;
 	static int gap;
 	static int size;
 };

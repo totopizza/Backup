@@ -46,6 +46,7 @@
     <ClInclude Include="src\Map.h" />
     <ClInclude Include="src\MapManager.h" />
     <ClInclude Include="src\Marker.h" />
+    <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\Utility.h" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +74,7 @@
     <ClCompile Include="src\Map.cpp" />
     <ClCompile Include="src\MapManager.cpp" />
     <ClCompile Include="src\Marker.cpp" />
+    <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Utility.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

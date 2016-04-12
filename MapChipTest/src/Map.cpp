@@ -2,17 +2,8 @@
 
 Map::Map()
 {
-	for (int i = 0; i < row; ++i) {
-		for (int j = 0; j < column; ++j) {
-			ground[i][j] = 0;
-		}
-	}
-
-	for (int i = 0; i < row; ++i) {
-		for (int j = 0; j < column; ++j) {
-			ground_2[i][j] = 0;
-		}
-	}
+	ground = std::vector<std::vector<int>>(ChipData::row, std::vector<int>(ChipData::column));
+	ground_2 = std::vector<std::vector<int>>(ChipData::row, std::vector<int>(ChipData::column));
 
 	position = Vec2i(0, 0);
 }
@@ -35,21 +26,21 @@ void Map::Update(AppEnv& env)
 
 void Map::Draw()
 {
-	for (int i = 0; i < column; ++i) {
-		for (int j = 0; j < row; ++j) {
+	for (int i = 0; i < ChipData::column; ++i) {
+		for (int j = 0; j < ChipData::row; ++j) {
 
-			position.x() = j * 105 - Window::widthFit;
-			position.y() = i * 105 - Window::heightFit;
+			position.x() = j * (ChipData::size + ChipData::gap) - Window::widthFit;
+			position.y() = i * (ChipData::size + ChipData::gap) - Window::heightFit;
 
 			if (ground[j][i] == 0) {
-				drawFillBox(position.x(), -position.y(), 100, 100, Color::blue);
+				drawFillBox(position.x(), -position.y(), ChipData::size, ChipData::size, Color::blue);
 			}
 			else if (ground[j][i] == 1) {
-				drawFillBox(position.x(), -position.y(), 100, 100, Color::cyan);
+				drawFillBox(position.x(), -position.y(), ChipData::size, ChipData::size, Color::cyan);
 			}
 
 			if (ground_2[j][i] == 2) {
-				drawFillBox(position.x(), -position.y(), 100, 100, Color::red);
+				drawFillBox(position.x(), -position.y(), ChipData::size, ChipData::size, Color::red);
 			}
 
 		}

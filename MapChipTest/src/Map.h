@@ -3,14 +3,21 @@
 #include "Utility.h"
 #include "Marker.h"
 
+#include <vector>
+
 class Map
 {
 private:
 	Marker marker;
 
-	int ground[row][column];
+	Direction dir;
 
-	int ground_2[row][column];
+	std::vector<std::vector<int>> ground;
+	std::vector<std::vector<int>> ground_2;
+
+	//int ground[row][column];
+
+	//int ground_2[row][column];
 
 	Vec2i position;
 
