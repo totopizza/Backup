@@ -96,6 +96,7 @@
     <ClInclude Include="src\MapManager.h">
       <Filter>Class\Map</Filter>
     </ClInclude>
+    <ClInclude Include="src\Utility.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\lib\appEnv.cpp">
@@ -168,5 +169,6 @@
     <ClCompile Include="src\MapManager.cpp">
       <Filter>Class\Map</Filter>
     </ClCompile>
+    <ClCompile Include="src\Utility.cpp" />
   </ItemGroup>
 </Project>

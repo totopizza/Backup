@@ -9,8 +9,8 @@ Marker::Marker()
 
 void Marker::Update(AppEnv& env)
 {
-	position.x() = (movingValue.x() * 105) - 100;
-	position.y() = movingValue.y() * 105;
+	position.x() = (movingValue.x() * 105) - Window::widthFit;
+	position.y() = movingValue.y() * 105 - Window::heightFit;
 
 	if (movingValue.x() < 4 && env.isPushKey(GLFW_KEY_RIGHT)) {
 		movingValue.x() += 1;

@@ -1,9 +1,7 @@
 #pragma once
 #include "lib\framework.hpp"
+#include "Utility.h"
 #include "Marker.h"
-
-const int row = 5;
-const int column = 5;
 
 class Map
 {
@@ -11,6 +9,8 @@ private:
 	Marker marker;
 
 	int ground[row][column];
+
+	int ground_2[row][column];
 
 	Vec2i position;
 

@@ -1,14 +1,9 @@
 ﻿#include "lib/framework.hpp"
+#include "Utility.h"
 #include "MapManager.h"
 
-enum Window
-{
-	WIDTH = 1024,
-	HEIGHT = 1024
-};
-
 int main(void) {
-	AppEnv env(Window::WIDTH, Window::HEIGHT);
+	AppEnv env(Window::width, Window::height);
 
 	MapManager mapManager;
 

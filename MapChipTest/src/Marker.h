@@ -1,5 +1,6 @@
 #pragma once
 #include "lib\framework.hpp"
+#include "Utility.h"
 
 class Marker
 {

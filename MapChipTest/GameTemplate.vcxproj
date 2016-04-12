@@ -46,6 +46,7 @@
     <ClInclude Include="src\Map.h" />
     <ClInclude Include="src\MapManager.h" />
     <ClInclude Include="src\Marker.h" />
+    <ClInclude Include="src\Utility.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\lib\appEnv.cpp" />
@@ -72,6 +73,7 @@
     <ClCompile Include="src\Map.cpp" />
     <ClCompile Include="src\MapManager.cpp" />
     <ClCompile Include="src\Marker.cpp" />
+    <ClCompile Include="src\Utility.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{9EFD6A36-08E8-485E-B135-5B6519C0F6B1}</ProjectGuid>
